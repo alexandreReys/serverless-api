@@ -1,0 +1,16 @@
+service: serverless-api
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+
+plugins:
+  - serverless-offline
+  - serverless-plugin-typescript
+
+functions:
+  api:
+    handler: micro-services/main/src/index.handler
+    events:
+      - httpApi: '*'
